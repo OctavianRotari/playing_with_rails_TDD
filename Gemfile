@@ -14,6 +14,7 @@ gem 'spring', group: :development
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'byebug'
 end
 
 group 'test' do
