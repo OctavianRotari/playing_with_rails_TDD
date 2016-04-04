@@ -5,7 +5,13 @@
 	<%= @todos.each do |todo| %>
 		<li class="<%= "completed" if todo.completed? %>">
 			<%= todo.title %>
-			<%= button_to "Mark as completed", todo_completion_path(todo) %>
+			<% if todo.completed? %>
+				<%= button_to "Mark as incompleted", 
+				todo_completion_path(todo),
+				method: :delete %>
+			<%else%>
+				<%= button_to "Mark as completed", todo_completion_path(todo) %>
+			<%end%>
 		</li>
 	<%end%>
 </ul>
